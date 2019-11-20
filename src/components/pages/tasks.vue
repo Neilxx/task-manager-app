@@ -126,6 +126,9 @@ li > input {
   cursor: pointer;
 }
 
+h2 {
+  font-family: verdana;
+}
 .strike-out {
    text-decoration: line-through;
 }

@@ -1,12 +1,13 @@
 <template>
   <div id="app">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">Task Manager</a>
+      <router-link  class="nav-link home-btn" to="/">Task Manager</router-link>
+      <!-- <a class="navbar-brand" href="/">Task Manager</a> -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
         <ul class="navbar-nav mr-auto">
           <li v-if="login" class="nav-item active">
-            <router-link  class="nav-link" to="/tasks">My Task</router-link>
+            <router-link  class="nav-link" to="/tasks">My Tasks</router-link>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -62,7 +63,26 @@ export default {
 </script>
 
 <style>
+body, html {
+  height: 100%;
+}
+
+body {
+  background-image: url("~@/assets/home-page.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .signout-btn {
   cursor: pointer;
+}
+
+.home-btn {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: verdana;
+  color: #111;
 }
 </style>

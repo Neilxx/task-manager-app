@@ -1,12 +1,25 @@
 <template>
-  <form class="form-signin" @submit.prevent="signin">
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail" class="sr-only">Email address</label>
-    <input v-model="user.email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input v-model="user.password" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  </form>
+  <div class="row">
+    <div class="block col-md-6 offset-md-2">
+      <form class="form-signin" @submit.prevent="signin">
+        <h1>Please sign in</h1>
+          <p id="login-explain">sign in with demo account that is pre-filled,
+            <br> or
+            <router-link id="signup-link" to="/signup">sign up</router-link>
+            a new account
+          </p>
+        <div class="input-block">
+          <label for="inputEmail" >&nbsp;Email&nbsp;&nbsp;</label>
+          <input v-model="user.email" class="user-input" type="email" id="inputEmail" placeholder="Email address" required="" autofocus="">
+        </div>
+        <div class="input-block">
+          <label for="inputPassword" >Password</label>
+          <input v-model="user.password" class="user-input" type="password" id="inputPassword" placeholder="Password" required="">
+        </div>
+        <button type="submit">Sign in</button>
+      </form>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -14,8 +27,8 @@ export default {
   data () {
     return {
       user: {
-        email: '',
-        password: ''
+        email: 'demo@demo.org',
+        password: 'demodemo'
       }
     }
   },
@@ -40,48 +53,41 @@ export default {
 </script>
 
 <style scoped>
-html,
-body {
-  height: 100%;
+input {
+  padding: 2px 5px;
 }
 
-body {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #f5f5f5;
+h1 {
+  margin-bottom: 30px;
 }
 
-.form-signin {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
-}
-.form-signin .checkbox {
-  font-weight: 400;
-}
-.form-signin .form-control {
+.block {
+  top: 200px;
   position: relative;
-  box-sizing: border-box;
-  height: auto;
+  background-color: rgba(221,221,221,0.5);
   padding: 10px;
-  font-size: 16px;
+  text-align: center;
+  padding: 40px;
+  font-family: Courier;
 }
-.form-signin .form-control:focus {
-  z-index: 2;
+
+.cta {
+  background-color: #f44336;
+  padding: 8px 18px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
 }
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+
+.input-block {
+  margin-bottom: 15px;
 }
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+
+#login-explain {
+  margin-bottom: 25px;
+}
+
+#signup-link {
+  text-decoration: none;
 }
 </style>

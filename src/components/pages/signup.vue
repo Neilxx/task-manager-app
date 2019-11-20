@@ -5,11 +5,11 @@
         <h1>Please sign up</h1>
         <div class="input-block">
           <label for="inputName" >Name&nbsp;&nbsp;&nbsp;&nbsp;</label>
-          <input v-model="user.email" class="user-input" type="text" id="inputName" placeholder="User Name" required="" autofocus="">
+          <input v-model="user.name" class="user-input" type="text" id="inputName" placeholder="User Name" required="" autofocus="">
         </div>
         <div class="input-block">
           <label for="inputEmail" >Email&nbsp;&nbsp;&nbsp;</label>
-          <input v-model="user.password" class="user-input" type="text" id="inputEmail" placeholder="Email Address" required="">
+          <input v-model="user.email" class="user-input" type="text" id="inputEmail" placeholder="Email Address" required="">
         </div>
         <div class="input-block">
           <label for="inputPassword" >Password</label>

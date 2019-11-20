@@ -27,7 +27,7 @@ export default {
   data () {
     return {
       user: {
-        email: 'demo@demo.org',
+        email: 'demo@demo.tw',
         password: 'demodemo'
       }
     }

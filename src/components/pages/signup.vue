@@ -1,11 +1,13 @@
 <template>
-  <form class="form-signin" @submit.prevent="signin">
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+  <form class="form-signin" @submit.prevent="signup">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+    <label for="inputName" class="sr-only">Name</label>
+    <input v-model="user.name" type="name" id="inputName" class="form-control" placeholder="User Name" required="" autofocus="">
     <label for="inputEmail" class="sr-only">Email address</label>
-    <input v-model="user.email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+    <input v-model="user.email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required="">
     <label for="inputPassword" class="sr-only">Password</label>
     <input v-model="user.password" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
   </form>
 </template>
 
@@ -14,17 +16,19 @@ export default {
   data () {
     return {
       user: {
+        name: '',
         email: '',
         password: ''
       }
     }
   },
   methods: {
-    signin () {
+    signup () {
       const vm = this
       this.axios.post(
-        'https://neilxx-task-manager.herokuapp.com/users/login',
+        'https://neilxx-task-manager.herokuapp.com/users',
         {
+          name: vm.user.name,
           email: vm.user.email,
           password: vm.user.password
         },
